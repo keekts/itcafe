@@ -142,6 +142,36 @@
             font-weight: 600;
         }
 
+        .bcel-button {
+            background: linear-gradient(135deg, #1976D2, #1565C0);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(25,118,210,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bcel-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(25,118,210,0.5);
+            background: linear-gradient(135deg, #1565C0, #0D47A1);
+        }
+
+        .bcel-button:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 10px rgba(25,118,210,0.3);
+        }
+
         .thank-you {
             font-size: 18px;
             color: #2E7D32;
@@ -203,11 +233,38 @@
                 </div>
             </div>
             <div class="qr-text">📱 ສະແກນເພື່ອຊຳລະ</div>
+            
+            <button class="bcel-button" onclick="openBCELOne()">
+                🏦 ເປີດ BCEL One
+            </button>
         </div>
         
         <div class="thank-you">
             🙏 ຂອບໃຈຫຼາຍໆ 🙏
         </div>
     </div>
+
+    <script>
+        function openBCELOne() {
+            // ພະຍາຍາມເປີດແອບ BCEL One
+            const bcelOneDeepLink = 'bcelone://';
+            const bcelOneAppStore = 'https://apps.apple.com/la/app/bcel-one/id1451334828';
+            const bcelOnePlayStore = 'https://play.google.com/store/apps/details?id=com.aws.bcelone';
+            
+            // ສົ່ງຄົນໄປຫາ deep link ກ່ອນ
+            window.location.href = bcelOneDeepLink;
+            
+            // ຖ້າແອບບໍ່ມີ ໃຫ້ໄປ app store ຫຼັງຈາກ 2 ວິນາທີ
+            setTimeout(() => {
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    window.location.href = bcelOneAppStore;
+                } else if (/Android/.test(navigator.userAgent)) {
+                    window.location.href = bcelOnePlayStore;
+                } else {
+                    alert('ກະລຸນາດາວໂຫລດແອບ BCEL One ໃນໂທລະສັບຂອງທ່ານກ່ອນ');
+                }
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
