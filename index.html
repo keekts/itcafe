@@ -1,1 +1,213 @@
-<h1>heloo</h1>
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ແຈ້ງການຊຳລະຄ່າກາແຟ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6B4E3D 0%, #8B4A3D 50%, #A0522D 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #FFF8E1, #FFFFFF);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            border: 2px solid #D4A574;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+
+        .coffee-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3E2723;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #5D4037;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4E342E;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            border-left: 4px solid #D4A574;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-section {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px dashed #D4A574;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: scan 2s ease-in-out infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .qr-text {
+            font-size: 16px;
+            color: #3E2723;
+            font-weight: 600;
+        }
+
+        .thank-you {
+            font-size: 18px;
+            color: #2E7D32;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(76,175,80,0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(76,175,80,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            opacity: 0.3;
+            color: #8B4A3D;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="decorative-elements">☕ ☕ ☕</div>
+        
+        <div class="coffee-icon">☕</div>
+        
+        <div class="title">ແຈ້ງການຊຳລະຄ່າກາແຟ</div>
+        <div class="subtitle">ເຖິງສາຍຕູດກາແຟທັງຫຼາຍ</div>
+        
+        <div class="message">
+            <strong>ຖ້າສາຍຕູດມາກິນນຳແລ້ວ<br>
+            ກະລຸນາຊຳລະຄ່າກາແຟແນ່ເດີ</strong><br><br>
+            ເພື່ອຄວາມສະດວກ ກະລຸນາສະແກນ QR Code ຂ້າງລຸ່ມນີ້
+        </div>
+        
+        <div class="qr-section">
+            <div class="qr-placeholder">
+                <div style="text-align: center;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">📱</div>
+                    ວາງ QR Code<br>ຂອງທ່ານໃສ່ຕອນນີ້
+                </div>
+            </div>
+            <div class="qr-text">📱 ສະແກນເພື່ອຊຳລະ</div>
+        </div>
+        
+        <div class="thank-you">
+            🙏 ຂອບໃຈຫຼາຍໆ 🙏
+        </div>
+    </div>
+</body>
+</html>
